@@ -28,32 +28,29 @@ function allCombinations(str) {
 console.log(allCombinations("dog"));
 
 //Question 3
-function allCaps(str) { // str = "a very long daY"
-  let wordsArray = str.toLowerCase().split(' ') // ["a", "very", "long", "day"]
+function allCaps(str) { 
+  let wordsArray = str.toLowerCase().split(" ") 
   let capsArray = []
-  function blabla(word){
-    capsArray.push(word[0].toUpperCase() + word.slice(1)) //word[0] = v, V, word.slice(1) = ery, Very
+  wordsArray.forEach(word => { 
+      capsArray.push(word[0].toUpperCase() + word.slice(1))
+  });
 
-  }
-  wordsArray.forEach(blabla);
-
-  return capsArray.join(' ') // "A Very Long Day"
+  return capsArray.join(" ") 
 }
 
 //Question 4
 function myPower(x, n) {
   let ans = 1;
-  for (let i = 1; i <= n; i++) {
+  for (let i = 0; i < n; i++) {
     ans *= x;
   }
   return ans;
 }
 console.log(myPower(7, 3));
 
-
 //Question 5
 function getFirstNotRepeating(str) {
-  let arr = str.split("");
+  let arr = str.split(""); //"abacddbec". ["a","b","a",c,d,d,b,e,c]
   let result = "";
   let ctr = 0; 
   for (let i = 0; i < arr.length; i++) {
@@ -74,7 +71,6 @@ console.log(getFirstNotRepeating("abacddbec"));
 
 
 //Question 6 (Bonus)
-function isPrefectNumber(num) {
   function isPrefectNumber(num) {
     let temp = 0;
     for(let i=1; i<=num/2; i++){
@@ -87,7 +83,6 @@ function isPrefectNumber(num) {
     } else {
       console.log("It is not a perfect number.");
     }
-  }
   isPrefectNumber(28);
 }
 
